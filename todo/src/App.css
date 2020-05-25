@@ -1,9 +1,15 @@
+.body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  background-color: #282c34;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -13,9 +19,15 @@
   }
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  line-height: 2rem;
+  width: 500px;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,6 +38,99 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.todo_list {
+  /* background-color: rgba(255, 255, 255, 0.794); */
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.todo_item {
+  display: flex;
+  align-items: center;
+}
+
+.add_todo{
+  /* background-color: bisque; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  /* border: 1px solid black; */
+  width: 500px;
+}
+
+input {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 1.4rem;
+  outline: none;
+  width: 100%;
+}
+
+#text_field {
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 85%;
+}
+
+#submit_button {
+  border: 1px solid white;
+  border-radius: 10px;
+  width:15%;
+}
+
+.checkbox {
+  width: 20px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color .2s ease-in-out;
+  border: 1px solid #fff;
+}
+
+.checkbox:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.checkbox-checked {
+  color: #000;
+  background: #fff;
+}
+
+.trash {
+  height: 25px;
+  width: 30px;
+  background-color: #282c34;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  transition: background-color .2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trash:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.trash_icon {
+  display: flex;
+  height: 16px;
+  width: 18px;
 }
 
 @keyframes App-logo-spin {
