@@ -53,6 +53,7 @@ ul {
 .todo_item {
   display: flex;
   align-items: center;
+  line-height: 0px;
 }
 
 .add_todo{
@@ -63,6 +64,13 @@ ul {
   margin: 1rem 0;
   /* border: 1px solid black; */
   width: 500px;
+}
+
+#todo_name {
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: left;
+  word-wrap: break-word;
 }
 
 input {
@@ -81,10 +89,22 @@ input {
 }
 
 #submit_button {
+  background-color: #282c34;
+  color: white;
+  font-size: 1.4rem;
+  outline: none;
+  width: 100%;
   border: 1px solid white;
   border-radius: 10px;
   width:15%;
+  transition: background-color .2s ease-in-out;
+  cursor: pointer;
 }
+
+#submit_button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 
 .checkbox {
   width: 20px;
@@ -102,7 +122,6 @@ input {
 
 .checkbox:hover {
   background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 .checkbox-checked {
@@ -110,7 +129,22 @@ input {
   background: #fff;
 }
 
-.trash {
+.is_done .checkbox {
+  color: #000;
+  background: #fff;
+}
+
+.is_done {
+  display: flex;
+  align-items: center;
+  line-height: 0px;
+}
+
+.is_done #todo_name {
+  text-decoration: line-through;
+}
+
+#trash {
   height: 25px;
   width: 30px;
   background-color: #282c34;
@@ -123,7 +157,7 @@ input {
   justify-content: center;
 }
 
-.trash:hover {
+#trash:hover {
   background: rgba(255, 255, 255, 0.25);
 }
 
