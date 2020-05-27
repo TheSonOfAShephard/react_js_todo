@@ -53,7 +53,6 @@ ul {
 .todo_item {
   display: flex;
   align-items: center;
-  line-height: 0px;
 }
 
 .add_todo{
@@ -70,7 +69,8 @@ ul {
   font-size: 1.4rem;
   width: 100%;
   text-align: left;
-  word-wrap: break-word;
+  margin-block-start: 10px;
+  margin-block-end: 10px;
 }
 
 input {
@@ -137,7 +137,6 @@ input {
 .is_done {
   display: flex;
   align-items: center;
-  line-height: 0px;
 }
 
 .is_done #todo_name {
