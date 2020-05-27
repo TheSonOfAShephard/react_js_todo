@@ -71,6 +71,7 @@ ul {
   text-align: left;
   margin-block-start: 10px;
   margin-block-end: 10px;
+  word-break: break-all;
 }
 
 input {
