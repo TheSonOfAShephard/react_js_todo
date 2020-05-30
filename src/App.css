@@ -144,6 +144,10 @@ input {
   text-decoration: line-through;
 }
 
+#clear_button {
+
+}
+
 #trash {
   height: 25px;
   width: 30px;

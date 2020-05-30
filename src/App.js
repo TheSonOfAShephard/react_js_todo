@@ -10,6 +10,8 @@ function App() {
 
   const contentRef = useRef();
 
+  const todoRef = useRef();
+
   useEffect(() => {
     const storedTodoList = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (storedTodoList)
@@ -38,6 +40,10 @@ function App() {
     setTodoList(todoList.filter(item => item.id !== id));
   }
 
+  function handleClearCompleted() {
+    setTodoList(todoList.filter(item => item.isDone === false));
+  }
+
   function toggleTodo(i) {
     const newTodoList = [...todoList];
     newTodoList[i].isDone = !newTodoList[i].isDone;
@@ -48,6 +54,24 @@ function App() {
     if (event.key === 'Enter') {
       handleAddTodo();
     }
+  }
+
+  function updateTodoItem(event, i) {
+    const newTodoList = [...todoList];
+    newTodoList[i].content = event.currentTarget.innerText;
+    setTodoList(newTodoList);
+  }
+
+  function countIsDone() {
+    const temp = todoList.filter(item => item.isDone === true);
+    console.log(temp);
+    return temp.length;
+  }
+
+  function countNotIsDone(){
+    const temp = todoList.filter(item => item.isDone === false);
+    console.log(temp);
+    return temp.length;
   }
 
   return (
@@ -63,7 +87,7 @@ function App() {
                     <span>&#x2714;</span>
                   )}
                 </div>
-                <p id="todo_name">
+                <p id="todo_name" contentEditable="true" onBlur={event => updateTodoItem(event,i) } ref={todoRef}>
                   {todoItem.content}
                 </p>
                 <button onClick={() => handleDeleteTodo(todoItem.id)} id="trash">
@@ -82,8 +106,16 @@ function App() {
             type="text" 
             placeholder="Add Todo"/>
           <button onClick={handleAddTodo} id="submit_button">
-              Add
+            Add
           </button>
+        </div>
+        <h2>
+          {countNotIsDone()} Pending Tasks
+        </h2>
+        <div>
+          {(countIsDone() > 0) && (<button onClick={handleClearCompleted} id="clear_button">
+            Clear
+          </button>)}
         </div>
       </div>
     </div>
